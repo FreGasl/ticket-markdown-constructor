@@ -1,0 +1,152 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    background-color: #2D3142;
+}
+
+h1, h2, h3 {
+    font-weight: 500;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.settings {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 15px;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    width: 100%;
+    margin: 5px 0 15px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 1.35rem;
+    font-variant: small-caps;
+    margin: 0;
+    color: #EF8354;
+    text-align: center;
+}
+
+section .sec-nonrow {
+    width: 100%;
+}
+
+section .sec-row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+section h3 {
+    font-size: .95rem;
+    margin-bottom: 0;
+    width: 100%;
+    color: #666886;
+}
+
+section p {
+    width: 60%;
+    letter-spacing: 0.05rem;
+    cursor: default;
+}
+.set {
+    margin-left: auto;
+}
+
+section span  {
+    /*margin-top: 10px;*/
+    cursor: pointer;
+}
+
+.screen {
+    justify-content: space-between;
+}
+
+.screen .quality {
+    cursor: pointer;
+}
+
+.screen span{
+    text-align: right;
+}
+
+.dark {
+    background-color: #2D3142;
+    color: #e1e1e1;
+}
+
+.dark h3, .dark span {
+    color: #666886;
+    display: flex;
+    align-items: center;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #666886;
+}
+
+.link {
+    cursor: pointer;
+    color: #EF8354;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.apply-setting {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 15px;
+    background-color: #2D3142;
+    border-top: 1px solid #666886;
+    z-index: 100;
+}
+
+.apply-setting a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 40px;
+    background: #4F5D75;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.apply-setting a:hover {
+    background-color: #EF8354;
+}

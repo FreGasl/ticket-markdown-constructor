@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Создание тикета</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="unselectable">
+<header>
+    <div id="settings" class="button hover-button">
+        <a href="#"><i class="fa fa-cogs"></i></a>
+    </div>
+</header>
+<div class="toasts">
+    <div role="alert" class="fade alert alert-success alert-dismissible show hidden">
+        <button type="button" class="btn-close" aria-label="Close alert"></button>
+        <div class="d-flex">
+            <img alt="noti-icon" src="https://brand.workingsolutions.com/components/images/success.svg" width="28" class="me-4">
+            <div>
+                <div class="alert-heading h4">Скопировано</div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row p-0">
+    <div class="col-md-5 mx-auto bg-dark p-5">
+        <h2 class="text-light" style="color: #EF8354">
+            Тикет по
+            <span class="select-form">E2E</span> /
+            <span class="select-form non-select">API</span> /
+            <span class="select-form non-select">JIRA</span>
+        </h2>
+        <!-- Подробный тикет -->
+        <form action="/" class="step-form e2e-form" id="contact-info">
+            <div class="steps"></div>
+            <div class="tab" data-name="Общее">
+                <!-- Проект -->
+                <div class="form-floating">
+                    <select required class="form-select" id="floatingApp" name="app"></select>
+                    <label for="floatingApp">Проект</label>
+                </div>
+                <!-- Стенд -->
+                <div class="form-floating">
+                    <select required class="form-select" id="floatingStand" name="stand">
+                        <option value="Тестовый">Тестовый</option>
+                        <option value="Облако">Облако</option>
+                        <option value="Прод">Прод</option>
+                    </select>
+                    <label for="floatingStand">Стенд</label>
+                </div>
+                <!-- URL -->
+                <div class="form-floating">
+                    <input required type="url" class="form-control" id="floatingURL" name="url" placeholder="URL">
+                    <label for="floatingURL">URL</label>
+                </div>
+                <!-- Роль -->
+                <div class="form-floating">
+                    <select required class="form-select" id="floatingRole" name="role">
+                        <option value="Любая">Любая</option>
+                    </select>
+                    <label for="floatingRole">Роль</label>
+                </div>
+                <!-- Браузер -->
+                <div class="form-floating">
+                    <input required type="text" class="form-control" id="floatingInput" name="browser" placeholder="Браузер">
+                    <label for="floatingInput">Браузер</label>
+                </div>
+                <!-- Устройство -->
+                <div class="form-floating">
+                    <input required type="text" class="form-control" id="floatingDevice" name="device" placeholder="Устройство">
+                    <label for="floatingDevice">Устройство</label>
+                </div>
+            </div>
+
+            <div class="tab" data-name="Сценарий">
+                <!-- Описание -->
+                <div class="form-floating">
+                    <textarea required type="text" class="form-control" name="description" placeholder="Описание"
+                              id="floatingDescription"></textarea>
+                    <label for="floatingDescription">Описание</label>
+                </div>
+                <label class="hint"></label>
+                <!-- Шаги воспроизведения -->
+                <div class="form-floating">
+                    <textarea required type="text" class="form-control" name="stepstiket" placeholder="Шаги воспроизведения" id="floatingStepstiket" onfocusin="if (this.value === '') this.value = '1. '"></textarea>
+                    <label for="floatingStepstiket">Шаги воспроизведения</label>
+                </div>
+                <label class="hint"></label>
+                <!-- Шаги воспроизведения №2 -->
+                <div class="form-floating">
+                    <textarea hidden type="text" class="form-control" name="stepstiket-2" placeholder="Шаги воспроизведения №2" id="floatingStepstiket-2" onfocusin="if (this.value === '') this.value = '1. '"></textarea>
+                    <label hidden for="floatingStepstiket-2">Шаги воспроизведения №2</label>
+                </div>
+                <label class="hint" hidden></label>
+                <button name="add_stepstiket" type="button" class="add_stepstiket">+ Добавить вторые шаги воспроизведения</button>
+            </div>
+
+            <div class="tab" data-name="Результаты">
+                <!-- Актуальный результат -->
+                <div class="form-floating">
+                    <textarea required type="text" class="form-control" name="actualres" placeholder="Актуальный результат" id="floatingActualres"></textarea>
+                    <label for="floatingActualres">Актуальный результат</label>
+                </div>
+                <label class="hint"></label>
+                <!-- Ожидаемый результат -->
+                <div class="form-floating">
+                    <textarea required type="text" class="form-control" name="expectres" placeholder="Ожидаемый результат" id="floatingExpectres"></textarea>
+                    <label for="floatingExpectres">Ожидаемый результат</label>
+                </div>
+                <label class="hint"></label>                <!-- Примечание -->
+                <div class="form-floating">
+                    <textarea type="text" class="form-control" name="note" placeholder="Примечание (необязательное поле)" id="floatingNote"></textarea>
+                    <label for="floatingNote">Примечание (необязательное поле)</label>
+                </div>
+                <label class="hint"></label>
+                <!-- Использовать эмодзи -->
+                <div class="check">
+                    <label class="checkbox">
+                        <div class="checkbox-hover">
+                            <input class="checkbox__input" type="checkbox" name="emoji" >
+                            <svg class="checkbox__check" width="24" height="24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="label-text">Использовать эмодзи</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="status"></div>
+            <div class="controller">
+                <button name="prev" type="button" class="btn">Назад</button>
+                <button name="refresh" type="button" class="btn">Сбросить</button>
+                <button name="next" type="button" class="btn">Продолжить</button>
+            </div>
+            <div class="controller new-btn">
+                <button name="save" type="button" class="btn">Сохранить значения</button>
+            </div>
+        </form>
+        <!-- Тикет по API -->
+        <form action="/" class="step-form api-form hidden" id="api-info">
+            <div class="steps"></div>
+            <div class="tab" data-name="Запрос">
+                <!-- URL запроса -->
+                <div class="input-group">
+                    <select required class="form-select" id="method" name="method" style="max-width: 100px">
+                        <option value="GET" selected>GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="DELETE">DELETE</option>
+                    </select>
+                    <div style="width: 5px"></div>
+                    <input required type="text" class="form-control" id="request-url" name="urlRequest" placeholder="URL запроса">
+                </div>
+                <!-- Статус запроса -->
+                <div class="form-floating">
+                    <input required type="number" class="form-control" id="request-status" name="request-status" placeholder="Статус запроса">
+                    <label for="request-status">Статус запроса</label>
+                </div>
+                <!-- Время запроса -->
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="request-time" name="request-time" placeholder="Время запроса">
+                    <label for="request-time">Время запроса</label>
+                </div>
+            </div>
+            <div class="tab" data-name="Тело">
+                <!-- Тело запроса -->
+                <div class="form-floating">
+                    <textarea type="text" class="form-control" name="bodyRequest" placeholder="Тело запроса" id="bodyRequest"></textarea>
+                    <label for="bodyRequest">Тело запроса</label>
+                </div>
+                <label class="hint"></label>
+                <!-- Тело ответа -->
+                <div class="form-floating">
+                    <textarea required type="text" class="form-control" name="bodyResponse" placeholder="Тело ответа" id="bodyResponse"></textarea>
+                    <label for="bodyResponse">Тело ответа</label>
+                </div>
+                <label class="hint"></label>
+            </div>
+            <div class="tab" data-name="Логи">
+                <!-- Время в логах -->
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="timelog" name="timelog" placeholder="Время в логах">
+                    <label for="timelog">Время в логах</label>
+                </div>
+                <!-- Примечание -->
+                <div class="form-floating">
+                    <textarea type="text" class="form-control" name="note" placeholder="Примечание (необязательное поле)" id="note"></textarea>
+                    <label for="note">Примечание (необязательное поле)</label>
+                </div>
+                <label class="hint"></label>
+            </div>
+            <div class="status"></div>
+            <div class="controller">
+                <button name="prev" type="button" class="btn">Назад</button>
+                <button name="refresh" type="button" class="btn">Сбросить</button>
+                <button name="next" type="button" class="btn">Продолжить</button>
+            </div>
+        </form>
+        <!-- Тикет с JIRA-->
+        <form action="/" class="step-form jira-form hidden" id="jira-info">
+            <div class="steps"></div>
+
+            <div class="tab" data-name="URI">
+                <!-- URL запроса -->
+                <div class="form-floating">
+                    <input required class="form-control" id="uri-jira" name="uri-jira" placeholder="Статус запроса">
+                    <label for="uri-jira">URI запроса</label>
+                </div>
+                <!-- Добавить комментарии -->
+                <div class="check" id="add_comments" style="margin-bottom: 5px">
+                    <label class="checkbox">
+                        <div class="checkbox-hover">
+                            <input class="checkbox__input show_check" type="checkbox" name="emoji">
+                            <svg class="checkbox__check" width="24" height="24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="label-text">Добавить комментарии из тикета в описание</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="controller" style="margin-bottom: 5px">
+                    <button type="button" class="btn get-ticket">Получить информацию по запросу</button>
+                </div>
+                <div class="form-floating" style="padding-top: 10px">
+                    <div class="msg warning result-message hidden">
+                        ✅ ❌ Тест
+                    </div>
+                </div>
+            </div>
+            <div class="tab" data-name="Вывод">
+                <!-- Готовый тикет -->
+                <div class="form-floating">
+                    <textarea type="text" class="form-control" name="ticketInfo" placeholder="Основная информация" id="ticketInfo" style="margin-bottom: 4px !important;"></textarea>
+                    <label for="bodyTicket">Основная информация</label>
+                </div>
+                <div class="form-floating">
+                    <textarea type="text" class="form-control" name="bodyTicket" placeholder="Описание запроса" id="bodyTicket" style="margin-bottom: 4px !important;"></textarea>
+                    <label for="bodyTicket">Описание запроса</label>
+                </div>
+            </div>
+            <div class="status"></div>
+            <div class="controller new-btn">
+                <button name="prev" type="button" class="btn">Назад</button>
+                <button name="refresh" type="button" class="btn">Сбросить</button>
+                <button name="next" type="button" class="btn disable-next" disabled>Продолжить</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

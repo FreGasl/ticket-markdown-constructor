@@ -1,0 +1,15 @@
+{
+  "name": "testtools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "../node_modules/.bin/electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^37.2.6",
+    "jira-client": "^8.2.2"
+  }
+}
