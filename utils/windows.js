@@ -5,6 +5,7 @@ const createConstructorWindow = function (fullScreen) {
     let window;
     let loading = new BrowserWindow({ show: false, frame: false, width: 600, height: 600 });
     loading.once('show', () => {
+        console.log(path.join(__dirname, '../pages/preload/preload-form.js'))
         window = new BrowserWindow({
             width: 700,
             height: 700,
